@@ -1,1 +1,1 @@
-# examples
+# CorteXlab usage examples
