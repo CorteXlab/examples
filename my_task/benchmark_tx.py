@@ -109,7 +109,7 @@ def main():
         payload = struct.pack('!H', pktno & 0xffff) + data
         send_pkt(payload)
         n += len(payload)
-        sys.stderr.write('.')
+        sys.stdout.write('.')
         if options.discontinuous and pktno % 5 == 4:
             time.sleep(1)
         pktno += 1
