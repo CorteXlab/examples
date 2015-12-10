@@ -10,7 +10,7 @@ desc base scenario for CorteXlab
 # Experiment maximum duration
 #   Time after which the experiment is forced to stop
 #   integer (minutes)
-durat 1000
+durat 5
 
 # Node list
 #
@@ -20,12 +20,10 @@ durat 1000
 #   entry (entry point script relative to the task root)
 #   exit (exit point script relative to the task root. Use "none" for none)
 
-node2:
+node4:
    entry benchmark_rx.py
    params --antenna="TX/RX" --rx-gain=25 -v -W 2M -f 2.49G
-   exit none
 
-node1:
+node6:
    entry benchmark_tx.py
    params --antenna="TX/RX" --tx-amplitude=0.2 -v -W 2M -f 2.49G
-   exit none
