@@ -23,6 +23,7 @@ durat 5
 node4:
    entry benchmark_rx.py
    params --antenna="TX/RX" --rx-gain=25 -v -W 2M -f 2.49G
+   passive true
 
 node6:
    entry benchmark_tx.py

@@ -89,9 +89,6 @@ def main():
             print printable
             print "\n"
 
-        if pktno > 1000:
-            os._exit(0)
-
     parser = OptionParser(option_class=eng_option, conflict_handler="resolve")
     expert_grp = parser.add_option_group("Expert")
     parser.add_option("", "--discontinuous", action="store_true", default=False,
