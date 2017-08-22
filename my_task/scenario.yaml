@@ -1,0 +1,30 @@
+# Example scenario description file
+#
+#   All lines starting with "#" and empy lines are ignored
+
+
+# Scenario textual description
+#   simple string (a one liner)
+description: base scenario for CorteXlab
+
+# Experiment maximum duration
+#   Time after which the experiment is forced to stop
+#   integer (seconds)
+duration: 300
+
+# Node list
+#
+#   format:
+#
+#   nodes:
+#     (machine):
+#       command: (entry point script relative to the task root)
+
+nodes:
+
+  node4:
+    command: benchmark_rx.py --antenna="TX/RX" --rx-gain=25 -v -W 2M -f 2.49G
+    passive: true
+
+  node6:
+    command: benchmark_tx.py --antenna="TX/RX" --tx-amplitude=0.2 -v -W 2M -f 2.49G
