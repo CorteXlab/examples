@@ -111,11 +111,11 @@ def main():
         n += len(payload)
         sys.stdout.write('.')
         if options.discontinuous and pktno % 5 == 4:
-            time.sleep(1)
+            time.sleep(10)
         pktno += 1
         
     send_pkt(eof=True)
-    time.sleep(2)               # allow time for queued packets to be sent
+    time.sleep(20)               # allow time for queued packets to be sent
     tb.wait()                   # wait for it to finish
 
 if __name__ == '__main__':
