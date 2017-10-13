@@ -1,0 +1,29 @@
+# Example scenario description file
+#
+#   All lines starting with "#" and empy lines are ignored
+
+
+# Scenario textual description
+#   simple string (a one liner)
+description: Hellow world experiment for cortexlab
+
+# Experiment maximum duration
+#   Time after which the experiment is forced to stop
+#   integer (seconds)
+duration: 300
+
+# Node list
+#
+#   format:
+#
+#   (machine):
+#   entry (entry point script relative to the task root)
+#   exit (exit point script relative to the task root. Use "none" for none)
+nodes:
+
+  node4:
+    command: benchmark_tx.py --antenna="TX/RX" --args="addr=192.168.10.2" --tx-amplitude=0.2 -v -W 2M -f 2.49G -M 100.0
+
+  node3:
+    command: usrp_fft.py  -T 'TX/RX' -G '25' -W '4M' -F '2.49G' -P '6663' -I 'srvwww.cortexlab.fr' -A '-110' -B '-50' -R '4M' -S '1024' -H '10'
+    passive: true

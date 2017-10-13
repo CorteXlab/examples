@@ -1,0 +1,51 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Fri Jul  4 12:25:11 2014
+;; Desktop file format version 206
+;; Emacs version 23.4.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("bm"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/cortexlab/homes/mimbert/test_fft_web/test_fft_web.py"
+  "test_fft_web.py"
+  'python-mode
+  nil
+  424
+  '(410 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/cortexlab/homes/mimbert/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  nil
+  12727
+  '(11529 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . iso-latin-1-unix)))
+
+(desktop-create-buffer 206
+  "/cortexlab/homes/mimbert/test_fft_web/scenario.desc"
+  "scenario.desc"
+  'fundamental-mode
+  nil
+  823
+  '(746 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
