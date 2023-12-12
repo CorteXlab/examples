@@ -39,7 +39,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
 
     def handle_rx_in(self, msg):
         if self.reference_vector is None:
-            self.logger.error("Recieved a packet, but there is no reference to compare to")
+            self.logger.error("Received a packet, but there is no reference to compare to")
             return
         
         py_msg = pmt.to_python(msg)
@@ -56,7 +56,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
         bit_errors = np.unpackbits(xored)
         ber = np.mean(bit_errors)
 
-        self.logger.info(f"Recieved packet num {packet_num} with a BER of {ber}")
+        self.logger.info(f"Received packet num {packet_num} with a BER of {ber:.3g}")
 
 
     def handle_expected(self, msg):

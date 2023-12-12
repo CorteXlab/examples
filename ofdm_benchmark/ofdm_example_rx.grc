@@ -598,7 +598,7 @@ blocks:
       \        self.message_port_register_in(pmt.intern(\"RX in\"))\n        self.set_msg_handler(pmt.intern(\"\
       RX in\"), self.handle_rx_in)\n\n        self.reference_vector = None\n\n   \
       \ def handle_rx_in(self, msg):\n        if self.reference_vector is None:\n\
-      \            self.logger.error(\"Recieved a packet, but there is no reference\
+      \            self.logger.error(\"Received a packet, but there is no reference\
       \ to compare to\")\n            return\n        \n        py_msg = pmt.to_python(msg)\n\
       \        data = py_msg[1].astype(np.uint8, copy=False)\n\n        if len(data)\
       \ != len(self.reference_vector):\n            self.logger.warn(\"Packet with\
@@ -606,8 +606,8 @@ blocks:
       \        if \"packet_num\" in py_msg[0]:\n            packet_num = py_msg[0]['packet_num']\n\
       \        else:\n            packet_num = \"Not Found\"\n        xored = np.bitwise_xor(data,\
       \ self.reference_vector)\n        bit_errors = np.unpackbits(xored)\n      \
-      \  ber = np.mean(bit_errors)\n\n        self.logger.info(f\"Recieved packet\
-      \ num {packet_num} with a BER of {ber}\")\n\n\n    def handle_expected(self,\
+      \  ber = np.mean(bit_errors)\n\n        self.logger.info(f\"Received packet\
+      \ num {packet_num} with a BER of {ber:.3g}\")\n\n\n    def handle_expected(self,\
       \ msg):\n        self.reference_vector = pmt.to_python(msg)[1].astype(np.uint8,\
       \ copy=False)\n        # self.logger.info(\"Recieved a reference message\")\n\
       \n    def work(self, input_items, output_items):\n        \"\"\"example: multiply\
